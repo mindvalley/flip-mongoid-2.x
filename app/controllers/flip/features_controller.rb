@@ -2,6 +2,7 @@ module Flip
   class FeaturesController < ApplicationController
 
     def index
+      Feature # hack to eager load the modal
       @p = FeaturesPresenter.new(FeatureSet.instance)
     end
 

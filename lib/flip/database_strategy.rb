@@ -23,7 +23,7 @@ module Flip
     end
 
     def switch! key, enable
-      record = @klass.where(key: key.to_s).first_or_initialize
+      record = @klass.find_or_initialize_by(key: key.to_s)
       record.enabled = enable
       record.save!
     end
